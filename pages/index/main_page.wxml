@@ -1,0 +1,40 @@
+<import src="../../compoments/recommend/recommend.wxml"/>
+<import src="../../compoments/tBar/tBar.wxml"/>
+<import src="../../compoments/swiper/swiper.wxml"/>
+<!--index.wxml-->
+<scroll-view class='scroller' style="width:{{width}}px;height:{{height}}px;" scroll-y="true" lower-threshold="80" bindscrolltolower="loadMore">
+<!--下拉事件-->
+  <swiper class='banners' indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-color="#60ffffff" indicator-active-color="#fff">
+    <block wx:for="{{banner}}" wx:for-item='item' wx:key="item.url">
+      <swiper-item>
+        <image src="{{item.url}}" data-id="{{item.id}}" bindtap='adOnClick' class="banner" mode="aspectFill">
+          <!--广告页面跳转-->
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <template is="swiper" data="{{Swiper_data}}"/>
+  <view class='funcs'>
+    <view class='func' wx:for="{{functions}}" wx:for-item='item' wx:key='item.cont' bindtap='fucClick' data-id="{{item.cont}}" data-idx="{{item.id}}">
+      <image class='img_center' src="{{item.url}}" mode="aspectFill">
+        <!--页面跳转 funClick；图标-->
+      </image>
+      <view class='name'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class='MayLike'>
+    <view class='title'><text>热门推荐</text></view>
+    <view class='wrap' style='padding-top: 15rpx;'>
+        <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
+          <template is="store" data="{{store}}"/>
+        </view>
+      <view style="height:50px"></view>
+    </view>
+  </view>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+</scroll-view>
+<view class="body-view">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>

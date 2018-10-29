@@ -1,0 +1,55 @@
+@import '../../compoments/recommend/recommend.wxss';
+@import '../../compoments/swiper/swiper.wxss';
+
+page{
+    background-color: #f0f0f0;
+}
+
+.banner{
+    width: 100%;
+    height: 411rpx;
+}
+
+.funcs{
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 20rpx 0 0rpx 0;
+}
+
+.funcs .func{
+    width: 33.3%;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.funcs .func image{
+    width: 100rpx;
+    height: 100rpx;
+  text-align: center;
+
+}
+.funcs .func .name{
+    text-align: center;
+    color: #666666;
+    font-size: 26rpx;
+    margin-top: 10rpx;
+}
+
+.title {
+  padding-top: 15rpx;
+  
+  border-top: 10rpx;
+  border-color: #000000
+}
+.title text {
+  padding-right: 50rpx;
+  padding-bottom: 22rpx;
+  padding-left: 30rpx;
+  font-size: 50rpx;
+  color: #ff444496;
+  background-color: #ffffff;
+  width: 100%;
+}

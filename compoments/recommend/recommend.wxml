@@ -1,0 +1,40 @@
+  <template name='store'>
+    <view class='store'>
+  <image src="{{store.photo}}" mode="aspectFill"></image>
+  <view class='info'>
+    <view class='title'>
+      <view class='name'>{{store.name}}</view>
+      <view class='apply'>
+        <view class='applycounts'>
+          已申请：{{store.applycounts}}
+        </view> 
+      </view>
+    </view>
+    <view class='details'>
+      <view class='item'>
+        <view class='item_name'>可贷金额</view>
+        <view class='item_value'>{{store.money}}</view>
+      </view>
+      <view class='item'>
+        <view class='item_name'>月利率</view>
+        <view class='item_value'>{{store.rate}}</view>
+      </view>
+      <view class='item'>
+        <view class='item_name'>放款时间</view>
+        <view class='item_value'>{{store.time}}</view>
+      </view> 
+    </view>
+    <view class="bottom">
+      <view class='type'>
+        <text class='_type'>{{store.buztype}}</text>
+      </view>
+      <view class='applynow'>
+        <button class="apply_button" type="default" size="mini">
+        立即申请
+        </button>
+      </view>
+    </view>
+    
+  </view>
+</view>
+</template>

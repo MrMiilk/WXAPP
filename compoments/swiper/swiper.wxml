@@ -1,0 +1,11 @@
+<template name="swiper">
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+  <block wx:for="{{Swiper_data}}">
+    <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+    </navigator>
+  </block>
+ </swiper>
+</template>

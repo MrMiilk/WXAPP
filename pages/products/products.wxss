@@ -1,0 +1,50 @@
+@import '../../compoments/recommend/recommend.wxss';
+@import '../../compoments/swiper/swiper.wxss';
+page{
+    background-color: #f0f0f0;
+}
+
+.container .title{
+  /* display:flex; */
+  /* align-content: center; */
+  text-align: center;
+  font-size: 45rpx;
+  color: #faf6f6;
+  background-color: #fa5594;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.tab{
+  /* padding-top: 20rpx; */
+  display: flex;
+  flex-direction: row;
+}
+
+.tab_now{
+  background-color: #fa5594;
+  text-align: center;
+  font-size: 38rpx;
+  color: #ffffff;
+  /* margin-top: 10rpx; */
+  width: 33.3%;
+  height: 90rpx;
+  line-height: 90rpx;
+  /* margin-bottom: 30rpx; */
+
+  border: 4rpx solid #fa5594;
+  border-radius:7rpx;
+}
+.tab_{
+  background-color: #faf6f6;
+  text-align: center;
+  font-size: 37rpx;
+  color: #fa5594;
+  /* margin-top: 10rpx; */
+  width: 33.3%;
+  height: 90rpx;
+  line-height: 90rpx;
+  /* margin-bottom: 30rpx; */
+  border: 4rpx solid  #fa5594;
+  border-radius:4rpx;
+}

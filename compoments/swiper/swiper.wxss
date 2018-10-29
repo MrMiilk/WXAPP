@@ -1,0 +1,16 @@
+.swiper_container {
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    height: 55rpx;
+    width: 80vw;
+  }
+  
+  .swiper_item {
+    font-size: 27rpx;
+    text-align: center;
+    color: rgb(253, 144, 144);
+    overflow: hidden;
+    text-overflow: ellipsis;
+   white-space: nowrap;
+   letter-spacing: 2px;
+ }
