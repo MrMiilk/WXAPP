@@ -23,7 +23,7 @@ Page({
     self = this;
     // if(true){
       // wx.request({
-      //   url: 'http://192.168.2.213:8080/user/selectUserById/',
+      //   url: 'http://localhost:8080/user/selectUserById/',
       //   data:{
       //     'id':'2',
       //   },

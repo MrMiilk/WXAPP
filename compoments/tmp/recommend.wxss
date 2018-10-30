@@ -1,5 +1,5 @@
 page{
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 .store{
@@ -93,7 +93,7 @@ margin-left: 10rpx;
 }
 
 .store .info .bottom .type ._type{
-    background: #7777771c;
+    background: #ffffff;
     color: rgba(238, 75, 75, 0.575);
 }
 
@@ -105,7 +105,15 @@ margin-left: 10rpx;
     flex-direction: row;
     justify-content: flex-end;
     color: #505050;
-    font-size: 30rpx;
+    font-size: 25rpx;
     flex-wrap: nowrap;
+    text-align: center;
+    line-height: 23rpx;
+
+}
+.bian
+{
+ border-style: solid;
+ border-width:5px;
 }
 

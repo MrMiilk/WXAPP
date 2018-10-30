@@ -1,7 +1,7 @@
 <import src="../../compoments/tBar/tBar.wxml"/>
 <import src="../../compoments/recommend/recommend.wxml"/>
 <view class='container'>
-  <view class='title'><text>产品超市</text></view>
+  <view class='title1'><text>产品超市</text></view>
   <view class="tab" style="flex-direction:row;">
         <view id='0' class="{{(content == '0'||content == 0) ? 'tab_now' : 'tab_'}}" bindtap="tabChart"><text>热门推荐</text></view>
         <view id='1' class="{{(content == '1'||content == 1) ? 'tab_now' : 'tab_'}}" bindtap="tabChart"><text>放水口子</text></view>

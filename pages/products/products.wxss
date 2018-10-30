@@ -4,7 +4,7 @@ page{
     background-color: #f0f0f0;
 }
 
-.container .title{
+.container .title1{
   /* display:flex; */
   /* align-content: center; */
   text-align: center;

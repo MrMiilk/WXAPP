@@ -1,5 +1,5 @@
   <template name='store'>
-    <view class='store'>
+<view class='store'>
   <image src="{{store.photo}}" mode="aspectFill"></image>
   <view class='info'>
     <view class='title'>
@@ -23,13 +23,15 @@
         <view class='item_name'>放款时间</view>
         <view class='item_value'>{{store.time}}</view>
       </view> 
+      
     </view>
     <view class="bottom">
       <view class='type'>
         <text class='_type'>{{store.buztype}}</text>
+        
       </view>
       <view class='applynow'>
-        <button class="apply_button" type="default" size="mini">
+        <button class="apply_button" type="default" size="mini" style='background-color:#fa5594;color:#FFFFFF'>
         立即申请
         </button>
       </view>
@@ -37,4 +39,5 @@
     
   </view>
 </view>
+    
 </template>
