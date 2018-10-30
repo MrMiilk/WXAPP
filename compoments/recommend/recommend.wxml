@@ -31,7 +31,7 @@
         
       </view>
       <view class='applynow'>
-        <button class="apply_button" type="default" size="mini" style='background-color:#fa5594;color:#FFFFFF'>
+        <button class="apply_button" type="default" size="mini" style='background-color:#fa5594;width:210rpx;height:70rp;color:#FFFFFF'>
         立即申请
         </button>
       </view>

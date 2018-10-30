@@ -14,8 +14,8 @@ background-color: #ffffff;
 }
 
 .store image{
-    width: 130rpx;
-    height: 130rpx;
+    width: 150rpx;
+    height: 150rpx;
     flex-shrink: 0;
     border-radius: 10px;
 
@@ -101,7 +101,7 @@ background-color: #ffffff;
 }
 
 .store .info .bottom .applynow .apply_button{
-    margin-left:150rpx;
+    margin-left:130rpx;
     height: 70rpx;
     flex-direction: row;
     justify-content: flex-end;
