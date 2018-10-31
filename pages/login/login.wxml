@@ -20,7 +20,7 @@
     </view>
     <!--按钮-->
     <view class="loginBtnView">
-      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap='loginClick'>登录</button>
+      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap='loginClick' open-type="getUserInfo">登录</button>
     </view>
   </view>
   <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
