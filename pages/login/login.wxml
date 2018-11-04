@@ -5,12 +5,14 @@
     <!--账号-->
     <view class = "Login">
     <view class='headView'>
-    <open-data class='icon' mode='aspectFit' type='userAvatarUrl'></open-data>
+    <view wx:if="{{show==1}}">
+    <image class="user_img" src="/images/i10.png" mode="aspectFill"></image>
+     <text class="name_form">{{user_name}}</text>
 </view>
-     <view class="logintab">
-  <open-data type="userNickName"></open-data>   
-     </view>
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    </view>
+    <view wx:if="{{show==0}}">
+     <button open-type="getUserInfo" bindtap='loginClick'>授权登录</button>
+    </view>
     </view>
     <view class="messageView">
     <image class="nameImage" src="/images/i10.png" mode="aspectFill"></image>

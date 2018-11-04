@@ -4,11 +4,22 @@ var template = require("../../compoments/tBar/tBar.js");
 Page({
 
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    show : 0,
+    user_name: "test",
+    img_url: "xxx"
   },
   
   onLoad: function () {
+    var that = this;
     template.tabbar("tabBar", 2, this)//0表示第一个tabbar
+    wx.checkSession({
+      success(){
+        that.setData({
+          show:0,
+        })
+      }
+    })
   },
 
   getInformation: function (){
@@ -27,18 +38,16 @@ Page({
     self = this;
     wx.checkSession({
       success() {
-        //session_key 未过期，并且在本生命周期一直有效
-      //   wx.getUserInfo({
-      //     ///////
-      //     success: function (res) {
-      //       console.log(res)
-      //     }
-
-
-      //   })
-      // },
-      // fail() {
-        // session_key 已经失效，需要重新执行登录流程
+       // session_key 未过期，并且在本生命周期一直有效
+        wx.getUserInfo({
+          ///////
+          success: function (res) {
+            console.log(res)
+          }
+        })
+      },
+      fail() {
+       // session_key 已经失效，需要重新执行登录流程
         wx.login({
           success: function (res) {
             //console.log(res.code)
