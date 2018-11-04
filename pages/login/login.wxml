@@ -4,21 +4,21 @@
   <view class="login-from">
     <!--账号-->
     <view class = "Login">
-    <view class='headView'>
-    <view wx:if="{{show==1}}">
+    <view  wx:if="{{show==1}}" class='headView'>
     <image class="user_img" src="/images/i10.png" mode="aspectFill"></image>
      <text class="name_form">{{user_name}}</text>
-</view>
     </view>
     <view wx:if="{{show==0}}">
      <button open-type="getUserInfo" bindtap='loginClick'>授权登录</button>
     </view>
     </view>
-    <view class="messageView">
+    <navigator url='../per_imformation/per_imformation'>
+     <view class="messageView">
     <image class="nameImage" src="/images/i10.png" mode="aspectFill"></image>
     <text class="name">个人资料</text>
     <view class="line"></view>
     </view>
+    </navigator>
     <view class="messageView">
     <image class="nameImage" src="/images/i08.png"></image>
     <text class="name">设置</text>

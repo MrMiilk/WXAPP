@@ -16,7 +16,7 @@ Page({
     wx.checkSession({
       success(){
         that.setData({
-          show:0,
+          show:1,
         })
       }
     })
