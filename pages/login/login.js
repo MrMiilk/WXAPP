@@ -2,12 +2,11 @@ const app = getApp()
 var template = require("../../compoments/tBar/tBar.js");
 
 Page({
-
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     show : 0,
     user_name: "test",
-    img_url: "xxx"
+    img_url: ""
   },
   
   onLoad: function () {
@@ -15,39 +14,38 @@ Page({
     template.tabbar("tabBar", 2, this)//0表示第一个tabbar
     wx.checkSession({
       success(){
-        that.setData({
-          show:1,
+        wx.getUserInfo({
+          ///////
+          success: function (res) {
+            that.setData({
+              user_name: res.userInfo["nickName"],
+              img_url: res.userInfo["avatarUrl"],
+              show: 1
+            })
+          }
         })
       }
     })
-  },
-
-  getInformation: function (){
-    
-  },
-
-  passwordInput:function(event){
-    this.data.pwd = event.detail.value;
-  },
-
-  usernameInput:function(event){
-    this.data.name = event.detail.value;
   },
 
   loginClick:function(event){
     self = this;
     wx.checkSession({
       success() {
-       // session_key 未过期，并且在本生命周期一直有效
+       //session_key 未过期，并且在本生命周期一直有效
         wx.getUserInfo({
           ///////
           success: function (res) {
-            console.log(res)
+            self.setData({
+              user_name: res.userInfo["nickName"],
+              img_url: res.userInfo["avatarUrl"],
+              show: 1
+            })
           }
         })
       },
       fail() {
-       // session_key 已经失效，需要重新执行登录流程
+       //session_key 已经失效，需要重新执行登录流程
         wx.login({
           success: function (res) {
             //console.log(res.code)
@@ -68,6 +66,11 @@ Page({
                     ///////
                     success: function(res) {
                       console.log(res)
+                      self.setData({
+                        user_name: res.userInfo["nickName"],
+                        img_url: res.userInfo["avatarUrl"],
+                        show: 1,
+                      })
                     }
                   })
                 },

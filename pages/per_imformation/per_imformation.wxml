@@ -1,0 +1,10 @@
+<view class="container">
+ <view class="info-row">
+            <text class="row-l">性　　别</text>
+            <text class="row-r">{{sex}}</text>
+        </view>
+        <view class="info-row">
+            <text class="row-l">出生日期</text>
+            <text class="row-r">{{age}}</text>
+        </view>
+</view>
