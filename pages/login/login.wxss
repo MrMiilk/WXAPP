@@ -75,7 +75,7 @@ page{
   color: #cccccc;
   font-size: 14px
 } */
- name_form{
+.name_form{
    text-align: center;
    font-size: 14px;
    

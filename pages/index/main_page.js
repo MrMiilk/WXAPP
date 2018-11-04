@@ -5,6 +5,7 @@ const app = getApp()
 var template = require
 //default_page = app.globalData.default_page,//默认的产品超市页面
 ("../../compoments/tBar/tBar.js");
+import tmp from "../../compoments/recommend/recommend.js";
 var page = 0;
 Page({
   data: {
@@ -24,6 +25,13 @@ Page({
     storelist_: [
 
     ]
+  },
+  apply_now: function (event) {
+    //需要添加判断用户是否登陆参数，通过storage
+    //没有登陆的跳转到登陆界面
+    wx.navigateTo({
+      url: '/pages/apply/apply',//需要添加具体类别的参数
+    })
   },
 
   onShareAppMessage: function (res) {
@@ -139,8 +147,6 @@ Page({
           self.setData(
             { 
               functions: self.data.functions,
-              //default_page: res.data[0].id,
-              //main_to: res.data[0].id
              }
           )
         } else {
@@ -172,8 +178,6 @@ Page({
       },
       success: function (res) {
         if (res.statusCode == 200) {
-          //console.log(res);//获取的数据
-          //数据填写
           for (var idx in res.data) {
             self.data.storelist.push({
               id: res.data[idx].id,

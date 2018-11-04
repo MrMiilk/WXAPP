@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/main_page",
     "pages/products/products",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/apply/apply"
   ],
   "window": {
     "backgroundTextStyle": "light",
