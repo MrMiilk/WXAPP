@@ -28,12 +28,20 @@ Page({
     wx.checkSession({
       success() {
         //session_key 未过期，并且在本生命周期一直有效
-      },
-      fail() {
+      //   wx.getUserInfo({
+      //     ///////
+      //     success: function (res) {
+      //       console.log(res)
+      //     }
+
+
+      //   })
+      // },
+      // fail() {
         // session_key 已经失效，需要重新执行登录流程
         wx.login({
           success: function (res) {
-            console.log(res.code)
+            //console.log(res.code)
             if (res.code) {
               wx.request({
                 url: 'http://192.168.1.6:8080/login/user_login',
@@ -49,23 +57,8 @@ Page({
                   var token = res.data.access_token;
                   wx.getUserInfo({
                     ///////
-                    success: res => {
-                      // 保存用户信息到服务端
-                      wx.request({
-                        url: "xxxx",
-                        data: res.userInfo,
-                        method: "POST",
-                        header: {
-                          'Authorization': 'Bearer ' + token,
-                          'content-type': 'application/json',
-                        },
-                        success: function (res) {
-                          console.log("success");
-                        },
-                        fail: function (error) {
-                          console.log(error);
-                        }
-                      })
+                    success: function(res) {
+                      console.log(res)
                     }
                   })
                 },
