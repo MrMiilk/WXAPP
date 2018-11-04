@@ -45,6 +45,5 @@ page{
   height: 90rpx;
   line-height: 90rpx;
   /* margin-bottom: 30rpx; */
-  border: 4rpx solid  #fa5594;
-  border-radius:4rpx;
+  border: 1rpx solid  #fa5594;
 }

@@ -21,6 +21,7 @@ background-color: #ffffff;
 
 }
 .store .info{
+  width:500rpx;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
