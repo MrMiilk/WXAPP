@@ -1,6 +1,6 @@
 const app = getApp()
 var template = require("../../compoments/tBar/tBar.js");
-import tmp from "../../compoments/recommend/recommend.js";
+// import tmp from "../../compoments/recommend/recommend.js";
 var page = 0;
 Page({
 

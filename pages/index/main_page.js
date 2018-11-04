@@ -5,7 +5,6 @@ const app = getApp()
 var template = require
 //default_page = app.globalData.default_page,//默认的产品超市页面
 ("../../compoments/tBar/tBar.js");
-import tmp from "../../compoments/recommend/recommend.js";
 var page = 0;
 Page({
   data: {
