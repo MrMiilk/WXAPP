@@ -9,7 +9,9 @@
   </view>
   <view class='wrap' style='padding-top: 15rpx;'>
         <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
-          <template is="store" data="{{store}}"/>
+          <!-- <view bindtap='apply_'> -->
+            <template is="store" data="{{store}}"/>
+          <!-- </view> -->
         </view>
       <view style="height:50px"></view>
   </view>

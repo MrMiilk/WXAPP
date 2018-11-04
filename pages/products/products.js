@@ -1,5 +1,6 @@
 const app = getApp()
 var template = require("../../compoments/tBar/tBar.js");
+import tmp from "../../compoments/recommend/recommend.js";
 var page = 0;
 Page({
 
@@ -86,6 +87,14 @@ Page({
         console.log('failed GET');
       }
     });
+  },
+
+  apply_now: function (event) {
+    //需要添加判断用户是否登陆参数，通过storage
+    //没有登陆的跳转到登陆界面
+    wx.navigateTo({
+      url: '/pages/apply/apply',//需要添加具体类别的参数
+    })
   },
 
   /**

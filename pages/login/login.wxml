@@ -5,8 +5,8 @@
     <!--账号-->
     <view class = "Login">
     <view class='headView'>
-    <view wx:if="{{show==1}}">
-    <image class="user_img" src="/images/i10.png" mode="aspectFill"></image>
+    <view wx:if="{{show==1}}" class='headView'>
+    <image class="user_img" src="{{img_url}}" mode="aspectFill"></image>
      <text class="name_form">{{user_name}}</text>
 </view>
     </view>
