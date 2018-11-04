@@ -4,11 +4,15 @@ var template = require("../../compoments/tBar/tBar.js");
 Page({
 
   data: {
-
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   
   onLoad: function () {
     template.tabbar("tabBar", 2, this)//0表示第一个tabbar
+  },
+
+  getInformation: function (){
+    
   },
 
   passwordInput:function(event){
@@ -21,75 +25,53 @@ Page({
 
   loginClick:function(event){
     self = this;
-    // if(true){
-      // wx.request({
-      //   url: 'http://localhost:8080/user/selectUserById/',
-      //   data:{
-      //     'id':'2',
-      //   },
-      //   method: 'GET',
-      //   header: {
-      //     "content-type": "application/x-www-form-urlencoded"
-      //   },
-      //   success: function(res){
-      //     if (res.statusCode == 200){
-      //       console.log(res);
-      //     }else{
-      //       console.log("fail");
-      //       console.log(res);
+    wx.checkSession({
+      success() {
+        //session_key 未过期，并且在本生命周期一直有效
+      //   wx.getUserInfo({
+      //     ///////
+      //     success: function (res) {
+      //       console.log(res)
       //     }
-      //   },
-      //   fail: function(res){
-      //     console.log('failed GET');
-      //   }
-      // })
-      wx.login({
-        success: function(res){
-          if(res.code){
-            wx.request({
-              url: 'xx',
-              data: {
-                code:  res.code
-              },
-              method: 'POST',
-              header: {
-                'content-type': 'application/json',
-              },
-              success: function (res){
-                console.log("access_token:", res.data.access_token);
-                var token = res.data.access_token;
 
-                wx.getUserInfo({
-                  ///////
-                  success: res => {
-                    // 保存用户信息到服务端
-                    wx.request({
-                      url: "xxxx",
-                      data: res.userInfo,
-                      method: "POST",
-                      header: {
-                        'Authorization': 'Bearer ' + token,
-                        'content-type': 'application/json',
-                      },
-                      success: function (res) {
-                        console.log("success");
-                      },
-                      fail: function (error) {
-                        console.log(error);
-                      }
-                    })
-                  }
-                })
-              },
-              fail: function (error){
-                console.log(error);
-              }
-            })
-          } else {
-            console.log("error code:" + res.errMsg);
+
+      //   })
+      // },
+      // fail() {
+        // session_key 已经失效，需要重新执行登录流程
+        wx.login({
+          success: function (res) {
+            //console.log(res.code)
+            if (res.code) {
+              wx.request({
+                url: 'http://192.168.1.6:8080/login/user_login',
+                data: {
+                  code: res.code
+                },
+                method: 'GET',
+                header: {
+                  'content-type': 'application/json',
+                },
+                success: function (res) {
+                  console.log("access_token:", res);
+                  var token = res.data.access_token;
+                  wx.getUserInfo({
+                    ///////
+                    success: function(res) {
+                      console.log(res)
+                    }
+                  })
+                },
+                fail: function (error) {
+                  console.log(error);
+                }
+              })
+            } else {
+              console.log("error code:" + res.errMsg);
+            }
           }
-        }
-      })
-    // }
+        })
+      }
+    })
   }
 })
