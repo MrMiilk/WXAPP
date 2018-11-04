@@ -4,22 +4,22 @@ function tabbarinit() {
     {
       "current": 0,
       "pagePath": "../../pages/index/main_page",
-      "iconPath": "../../images/i06.png",
-      "selectedIconPath": "../../images/i06.png",
+      "iconPath": "../../images/12.png",
+      "selectedIconPath": "../../images/12.png",
       "text": "主页"
     },
     {
       "current": 0,
       "pagePath": "../../pages/products/products?cont=0&id=-1",
-      "iconPath": "../../images/i06.png",
-      "selectedIconPath": "../../images/i06.png",
+      "iconPath": "../../images/14.png",
+      "selectedIconPath": "../../images/14.png",
       "text": "产品超市"
     },
     {
       "current": 0,
       "pagePath": "../../pages/login/login",
-      "iconPath": "../../images/i06.png",
-      "selectedIconPath": "../../images/i06.png",
+      "iconPath": "../../images/13.png",
+      "selectedIconPath": "../../images/13.png",
       "text": "用户中心"
     }
   ]

@@ -18,11 +18,11 @@ page{
 .login-img{
   width: 750rpx;
 }
- .Login{
+ /* .Login{
    width:750rpx;
    height:400rpx;
    background-color: rgb(0,191,255);
- }
+ } */
   .Login1{
    width:150rpx;
    height:150rpx;
@@ -44,7 +44,7 @@ page{
    background-color: #dd4d3a;
  }
 .name{
-  margin: 15px 15px 15px 10px;
+  margin-left:10rpx; 
   color: #545454;
   font-size: 14px;
 }
@@ -66,19 +66,9 @@ page{
   height: 150rpx;
   border-radius: 60rpx;
   }
-/* .inputText {
-  flex: block;
-  float: right;
-  text-align: right;
-  margin-right: 22px;
-  margin-top: 11px;
-  color: #cccccc;
-  font-size: 14px
-} */
 .name_form{
    text-align: center;
    font-size: 14px;
-   
  }
 .line {
   width: 100%;
@@ -120,6 +110,7 @@ page{
     width: 750rpx;
     position: relative;
     margin: center;
+    background-color:rgb(0,191,255); 
 }
 
 .headView .icon {

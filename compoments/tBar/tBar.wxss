@@ -12,7 +12,6 @@
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
   flex-direction: row;
 }
-
  .tabBar-item{
   float:left;
   width:33.3%;
