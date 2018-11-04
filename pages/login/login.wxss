@@ -13,35 +13,59 @@ page{
  
 /*登录图片*/
 .login-icon{
-  flex: none;
+  flex: left;
 }
 .login-img{
   width: 750rpx;
 }
- 
+ .Login{
+   width:750rpx;
+   height:400rpx;
+   background-color: rgb(0,191,255);
+ }
+  .Login1{
+   width:150rpx;
+   height:150rpx;
+   margin-top:60%; 
+   background-color: rgb(0,191,255);
+   margin: center;
+   border-radius:10rpx; 
+ }
 /*表单内容*/
 .login-from {
-  margin-top: 20px;
   flex: auto;
   height:100%;
 }
- 
-.inputView {
+ .line2{
+   margin-top: 35rpx;
+   margin-left:50rpx;
+   height: 3rpx;
+   width: 700rpx;
+   background-color: #dd4d3a;
+ }
+.name{
+  margin: 15px 15px 15px 10px;
+  color: #545454;
+  font-size: 14px;
+}
+.messageView {
   background-color: #fff;
-  line-height: 44px;
+  line-height: 60rpx;
 }
 /*输入框*/
 .nameImage, .keyImage {
-  margin-left: 22px;
-  width: 14px;
-  height: 14px
+  margin-left:10rpx;
+  margin-top: 20rpx;
+  width: 80rpx;
+  height: 80rpx
 }
- 
-.loginLab {
-  margin: 15px 15px 15px 10px;
-  color: #545454;
-  font-size: 14px
-}
+.nameImage1{
+  margin-top: 100rpx;
+  margin-left: 325rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 60rpx;
+  }
 .inputText {
   flex: block;
   float: right;
@@ -73,3 +97,30 @@ page{
   margin-top: 35px;
 }
 
+.logintab{
+  width:150rpx;
+  height: 60rpx;
+  background-color:#dd4d3a;
+  border-radius: 10rpx;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  margin: -20%;
+}
+.headView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400rpx;
+    width: 750rpx;
+    position: relative;
+    margin: center;
+}
+
+.headView .icon {
+     height: 180rpx;
+    width: 180rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
