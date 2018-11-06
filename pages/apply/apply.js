@@ -1,4 +1,5 @@
-var app = require('../../resource/js/util.js');
+//var app = require('../../resource/js/util.js');
+var Util = require('../../utils/util.js');
 Page({
   /**
    * 页面的初始数据
@@ -10,7 +11,6 @@ Page({
     iscode: null,//用于存放验证码接口里获取到的code
     codename: '获取验证码'
   },
-  //获取input输入框的值
   getNameValue: function (e) {
     this.setData({
       name: e.detail.value
@@ -46,10 +46,17 @@ Page({
       return false;
     } else {
       wx.request({
-        data: {},
-        'url': "",///
+        url: "http://192.168.1.11:8080/apply/check_code",///
+        header: {
+          "Content-Type": "application/json"
+        },
+        method: 'POST',
+        data: { 
+          code: "1234",
+          token: wx.getStorageSync("token")
+         },
         success(res) {
-          console.log(res.data.data)//后端获取的数据
+          console.log(res)//后端获取的数据
           _this.setData({
             iscode: res.data.data
           })
@@ -77,7 +84,7 @@ Page({
 
   },
   //获取验证码
-  getVerificationCode() {
+  getVerificationCode: function() {
     this.getCode();
     var _this = this
     _this.setData({
