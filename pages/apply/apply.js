@@ -46,12 +46,15 @@ Page({
       return false;
     } else {
       wx.request({
-        url: "http://192.168.1.6:8080/apply/check_code",///
+        url: "http://192.168.1.11:8080/apply/check_code",///
         header: {
           "Content-Type": "application/json"
         },
         method: 'POST',
-        data: { code: "1234", token: "123456" },
+        data: { 
+          code: "1234",
+          token: wx.getStorageSync("token")
+         },
         success(res) {
           console.log(res)//后端获取的数据
           _this.setData({

@@ -15,7 +15,6 @@ Page({
     wx.checkSession({
       success(){
         wx.getUserInfo({
-          ///////
           success: function (res) {
             that.setData({
               user_name: res.userInfo["nickName"],
@@ -51,7 +50,7 @@ Page({
             //console.log(res.code)
             if (res.code) {
               wx.request({
-                url: 'http://192.168.1.6:8080/login/user_login',
+                url: 'http://192.168.1.11:8080/login/user_login',
                 data: {
                   code: res.code
                 },
@@ -60,16 +59,19 @@ Page({
                   'content-type': 'application/json',
                 },
                 success: function (res) {
-                  console.log("access_token:", res);
-                  var token = res.data.access_token;
+                  //console.log("access_token:", res);
+                  //var token = res.data.access_token;
                   wx.getUserInfo({
-                    ///////
-                    success: function(res) {
-                      console.log(res)
+                    success: function(res_) {
+                      console.log(res.data["token"])
                       self.setData({
-                        user_name: res.userInfo["nickName"],
-                        img_url: res.userInfo["avatarUrl"],
+                        user_name: res_.userInfo["nickName"],
+                        img_url: res_.userInfo["avatarUrl"],
                         show: 1,
+                      })
+                      wx.setStorage({
+                        key: 'token',
+                        data: res.data["token"],
                       })
                     }
                   })

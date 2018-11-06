@@ -28,9 +28,19 @@ Page({
   apply_now: function (event) {
     //需要添加判断用户是否登陆参数，通过storage
     //没有登陆的跳转到登陆界面
-    wx.navigateTo({
-      url: '/pages/apply/apply',//需要添加具体类别的参数
+    wx.checkSession({
+      success (){
+        wx.navigateTo({
+          url: '/pages/apply/apply',//需要添加具体类别的参数
+        })
+      },
+      fail(){
+        wx.redirectTo({
+          url: '/pages/login/login',//需要登陆
+        })
+      }
     })
+    
   },
 
   onShareAppMessage: function (res) {
@@ -57,7 +67,7 @@ Page({
     // 广告设置
     self = this;
     wx.request({
-      url: 'http://192.168.1.6:8080/index/getCarouselData',
+      url: 'http://192.168.1.11:8080/index/getCarouselData',
       data: {
       },
       method: 'GET',
@@ -89,7 +99,7 @@ Page({
     })
     //公告设置
     wx.request({
-      url: 'http://192.168.1.6:8080/index/getSystemMsgData',
+      url: 'http://192.168.1.11:8080/index/getSystemMsgData',
       data: {
       },
       method: 'GET',
@@ -120,7 +130,7 @@ Page({
     })
     //目录
     wx.request({
-      url: 'http://192.168.1.6:8080/index/getCateData',
+      url: 'http://192.168.1.11:8080/index/getCateData',
       data: {
       },
       method: 'GET',
@@ -166,7 +176,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.1.6:8080/index/getProductData",
+      url: "http://192.168.1.11:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
@@ -285,7 +295,7 @@ Page({
       hidden: false
     });
     wx.request({
-      url: "http://192.168.1.6:8080/index/getProductData",
+      url: "http://192.168.1.11:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
