@@ -5,16 +5,16 @@ page{
   background: linear-gradient(#ff9797, #ff9797);
 }
 .changeInfo{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 90%;
-  margin: 50rpx auto;
+ display: flex;
+ flex-direction: column;
+ margin: 300rpx auto;
+ align-items: center;
+ justify-content: center;
 }
 .changeInfoName{
   position: relative;
   height: 80rpx;
-  width: 100%;
+  width: 90%;
   border-radius: 10rpx;
   background: #fff;
   margin-bottom: 20rpx;

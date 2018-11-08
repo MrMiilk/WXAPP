@@ -1,0 +1,16 @@
+<view class="container">
+<view class='headView'>
+</view>
+<view class="line"></view>
+ <view class="info-row">
+            <text class="row-l">客服热线</text>
+            <text class="row-r">1712666612</text>
+        </view>
+        <view class="info-row">
+            <text class="row-l">商务合作</text>
+            <text class="row-r">1712666612</text>
+        </view>
+        <view class="info-row">
+            <text class="row-l">退出登陆 </text>
+        </view>
+</view>

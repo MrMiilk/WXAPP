@@ -26,7 +26,18 @@ Page({
       }
     })
   },
-
+  bindFocus: function () {
+    wx.navigateTo({
+      title: "goback",
+      url: '../per_imformation/per_imformation'
+    })
+  },
+  bindFocus1: function () {
+    wx.navigateTo({
+      title: "goback",
+      url: '../setting/setting'
+    })
+  },
   loginClick:function(event){
     self = this;
     wx.checkSession({
