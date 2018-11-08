@@ -28,6 +28,7 @@ Page({
   apply_now: function (event) {
     //需要添加判断用户是否登陆参数，通过storage
     //没有登陆的跳转到登陆界面
+    //收集到点击申请的产品 在下面的链接传过去 product_type = 
     wx.checkSession({
       success (){
         wx.navigateTo({
@@ -40,7 +41,6 @@ Page({
         })
       }
     })
-    
   },
 
   onShareAppMessage: function (res) {
@@ -49,8 +49,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: 'xx',
-      path: '/pages/index/main_page?share_id=123',
+      title: 'Share',
+      path: '/pages/index/main_page?share_id='+"123",
       success: function (res) {
         // 转发成功
       },
