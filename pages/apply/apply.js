@@ -46,14 +46,14 @@ Page({
       return false;
     } else {
       wx.request({
-        url: "http://192.168.1.11:8080/apply/check_code",///
+        url: "http://192.168.31.50:8080/apply/check_code",///
         header: {
           "Content-Type": "application/json"
         },
         method: 'POST',
         data: { 
-          code: "1234",
-          token: wx.getStorageSync("token")
+          token: wx.getStorageSync("token"),
+          phone_num: this.data.phone,
          },
         success(res) {
           console.log(res)//后端获取的数据
@@ -134,8 +134,26 @@ Page({
     } else {
       wx.setStorageSync('name', this.data.name);
       wx.setStorageSync('phone', this.data.phone);
+      //将电话号码返回，表示成功验证
+      wx.request({
+        url: "http://192.168.31.50:8080/apply/verified_code",///
+        header: {
+          "Content-Type": "application/json"
+        },
+        method: 'POST',
+        data: {
+          token: wx.getStorageSync("token"),
+          phone_num: this.data.phone,
+        },
+        success(res) {
+          console.log(res)//后端获取的数据
+          _this.setData({
+            iscode: res.data.data
+          })
+        }
+      })
       wx.redirectTo({
-        url: '../add/add',
+        url: '../index/main_page',
       })
     }
   },
@@ -143,7 +161,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      //这里可以获取，设置一个变量存储
   },
 
   /**

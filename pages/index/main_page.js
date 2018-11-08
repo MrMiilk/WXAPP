@@ -28,6 +28,7 @@ Page({
   apply_now: function (event) {
     //需要添加判断用户是否登陆参数，通过storage
     //没有登陆的跳转到登陆界面
+    //收集到点击申请的产品 在下面的链接传过去 product_type = 
     wx.checkSession({
       success (){
         wx.navigateTo({
@@ -40,7 +41,6 @@ Page({
         })
       }
     })
-    
   },
 
   onShareAppMessage: function (res) {
@@ -49,8 +49,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: 'xx',
-      path: '/pages/index/main_page?share_id=123',
+      title: 'Share',
+      path: '/pages/index/main_page?share_id='+"123",
       success: function (res) {
         // 转发成功
       },
@@ -67,7 +67,7 @@ Page({
     // 广告设置
     self = this;
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getCarouselData',
+      url: 'http://192.168.31.50:8080/index/getCarouselData',
       data: {
       },
       method: 'GET',
@@ -99,7 +99,7 @@ Page({
     })
     //公告设置
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getSystemMsgData',
+      url: 'http://192.168.31.50:8080/index/getSystemMsgData',
       data: {
       },
       method: 'GET',
@@ -130,7 +130,7 @@ Page({
     })
     //目录
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getCateData',
+      url: 'http://192.168.31.50:8080/index/getCateData',
       data: {
       },
       method: 'GET',
@@ -176,7 +176,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.1.11:8080/index/getProductData",
+      url: "http://192.168.31.50:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
@@ -295,7 +295,7 @@ Page({
       hidden: false
     });
     wx.request({
-      url: "http://192.168.1.11:8080/index/getProductData",
+      url: "http://192.168.31.50:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
