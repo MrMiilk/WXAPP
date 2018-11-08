@@ -26,7 +26,18 @@ Page({
       }
     })
   },
-
+  bindFocus: function () {
+    wx.navigateTo({
+      title: "goback",
+      url: '../per_imformation/per_imformation'
+    })
+  },
+  bindFocus1: function () {
+    wx.navigateTo({
+      title: "goback",
+      url: '../setting/setting'
+    })
+  },
   loginClick:function(event){
     self = this;
     wx.checkSession({
@@ -50,7 +61,7 @@ Page({
             //console.log(res.code)
             if (res.code) {
               wx.request({
-                url: 'http://192.168.1.11:8080/login/user_login',
+                url: 'http://192.168.31.50:8080/login/user_login',
                 data: {
                   code: res.code
                 },

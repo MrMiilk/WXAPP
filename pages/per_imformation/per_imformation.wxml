@@ -1,4 +1,7 @@
 <view class="container">
+<view class='headView'>
+</view>
+<view class="line"></view>
  <view class="info-row">
             <text class="row-l">性　　别</text>
             <text class="row-r">{{sex}}</text>
@@ -6,5 +9,13 @@
         <view class="info-row">
             <text class="row-l">出生日期</text>
             <text class="row-r">{{age}}</text>
+        </view>
+        <view class="info-row">
+            <text class="row-l">  姓   名</text>
+            <text class="row-r">{{name}}</text>
+        </view>
+        <view class="info-row">
+            <text class="row-l">手机号 </text>
+            <text class="row-r">{{phone}}</text>
         </view>
 </view>

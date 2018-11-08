@@ -3,7 +3,9 @@
     "pages/index/main_page",
     "pages/products/products",
     "pages/login/login",
-    "pages/apply/apply"
+    "pages/apply/apply",
+    "pages/per_imformation/per_imformation",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

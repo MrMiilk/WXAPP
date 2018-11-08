@@ -46,7 +46,7 @@ Page({
       return false;
     } else {
       wx.request({
-        url: "http://192.168.1.11:8080/apply/check_code",///
+        url: "http://192.168.31.50:8080/apply/check_code",///
         header: {
           "Content-Type": "application/json"
         },

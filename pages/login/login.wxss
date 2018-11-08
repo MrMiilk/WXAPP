@@ -44,20 +44,23 @@ page{
    background-color: #dd4d3a;
  }
 .name{
-  margin-left:10rpx; 
   color: #545454;
-  font-size: 14px;
+  font-size: 40rpx;
+  margin: 15px 15px 15px 10px;
+
 }
 .messageView {
   background-color: #fff;
-  line-height: 60rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  
 }
 /*输入框*/
 .nameImage, .keyImage {
-  margin-left:10rpx;
-  margin-top: 20rpx;
-  width: 80rpx;
-  height: 80rpx
+  padding-left:10rpx; 
+  width: 70rpx;
+  height: 70rpx
 }
 .nameImage1{
   margin-top: 100rpx;

@@ -67,7 +67,7 @@ Page({
     // 广告设置
     self = this;
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getCarouselData',
+      url: 'http://192.168.31.50:8080/index/getCarouselData',
       data: {
       },
       method: 'GET',
@@ -99,7 +99,7 @@ Page({
     })
     //公告设置
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getSystemMsgData',
+      url: 'http://192.168.31.50:8080/index/getSystemMsgData',
       data: {
       },
       method: 'GET',
@@ -130,7 +130,7 @@ Page({
     })
     //目录
     wx.request({
-      url: 'http://192.168.1.11:8080/index/getCateData',
+      url: 'http://192.168.31.50:8080/index/getCateData',
       data: {
       },
       method: 'GET',
@@ -176,7 +176,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.1.11:8080/index/getProductData",
+      url: "http://192.168.31.50:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
@@ -295,7 +295,7 @@ Page({
       hidden: false
     });
     wx.request({
-      url: "http://192.168.1.11:8080/index/getProductData",
+      url: "http://192.168.31.50:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,

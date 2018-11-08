@@ -1,0 +1,60 @@
+/* pages/per_imformation/per_imformation.wxss */
+
+page{
+  height: 100%;
+  width: 100%;
+  background:#f0f0f0;
+}
+
+.headView{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400rpx;
+    width: 750rpx;
+    position: relative;
+    margin: center;
+    background-color:rgb(0,191,255); 
+}
+.line{
+  height:20rpx;
+  background-color: #f0f0f0;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.mg-t {
+    margin-top: 10px;
+}
+
+.panel1 {
+    background:#fff;
+    color:#333;
+    font-size:14px;
+}
+.info-row {
+    line-height: 40px;
+    border-bottom: 1px dashed #ebebeb;
+    overflow: hidden;
+    margin-left: 10rpx;
+}
+
+.row-l {
+    color: #999;
+}
+.row-r {
+    text-align: right;
+    float:right;
+    width:75%;
+    padding-right:15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
