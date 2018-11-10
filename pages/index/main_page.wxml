@@ -25,7 +25,7 @@
   <view class='MayLike'>
     <view class='title'><text>热门推荐</text></view>
     <view class='wrap' style='padding-top: 15rpx;'>
-        <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
+        <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this' catchtap='apply_now' id='{{store.name}}'>
           <template is="store" data="{{store}}"/>
         </view>
       <view style="height:50px"></view>

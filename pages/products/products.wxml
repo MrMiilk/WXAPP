@@ -8,7 +8,7 @@
         <view id='2' class="{{(content == '2' || content == 2) ? 'tab_now' : 'tab_'}}" bindtap="tabChart"><text>审核快速</text></view>
   </view>
   <view class='wrap' style='padding-top: 15rpx;'>
-        <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
+        <view wx:for='{{storelist}}' wx:for-item='store' wx:key='*this' catchtap='apply_now' id='{{store.name}}'>
           <!-- <view bindtap='apply_'> -->
             <template is="store" data="{{store}}"/>
           <!-- </view> -->

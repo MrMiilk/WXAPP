@@ -1,4 +1,4 @@
-
+<text class="store_name">{{txt}}</text>
 <view class='changeInfo'>
   <view class='changeInfoName'>
      <input placeholder='请输入姓名' bindinput='getNameValue' value='{{name}}'/> 
