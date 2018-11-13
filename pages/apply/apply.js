@@ -152,6 +152,8 @@ Page({
         data: {
           token: wx.getStorageSync("token"),
           phone_num: this.data.phone,
+          idx: wx.getStorageSync("idx"),
+          name: this.data.name,
         },
         success(res) {
           console.log(res)//后端获取的数据
