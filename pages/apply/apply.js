@@ -168,8 +168,7 @@ Page({
           name: this.data.name,
         },
         success(res) {
-          //console.log(res)//后端获取的数据
-          
+          console.log(res)//后端获取的数据
         }
       })
       wx.redirectTo({
