@@ -40,63 +40,64 @@ Page({
   },
   loginClick:function(event){
     self = this;
-    wx.checkSession({
-      success() {
-       //session_key 未过期，并且在本生命周期一直有效
-        wx.getUserInfo({
-          ///////
-          success: function (res) {
-            self.setData({
-              user_name: res.userInfo["nickName"],
-              img_url: res.userInfo["avatarUrl"],
-              show: 1
-            })
-          }
-        })
-      },
-      fail() {
-       //session_key 已经失效，需要重新执行登录流程
-        wx.login({
-          success: function (res) {
-            //console.log(res.code)
-            if (res.code) {
-              wx.request({
-                url: 'http://192.168.1.7:8080/login/user_login',
-                data: {
-                  code: res.code
-                },
-                method: 'GET',
-                header: {
-                  'content-type': 'application/json',
-                },
-                success: function (res) {
-                  //console.log("access_token:", res);
-                  //var token = res.data.access_token;
-                  wx.getUserInfo({
-                    success: function(res_) {
-                      console.log(res.data["token"])
-                      self.setData({
-                        user_name: res_.userInfo["nickName"],
-                        img_url: res_.userInfo["avatarUrl"],
-                        show: 1,
-                      })
-                      wx.setStorage({
-                        key: 'token',
-                        data: res.data["token"],
-                      })
-                    }
+    // wx.checkSession({
+    //   success() {
+    //     wx.getUserInfo({
+    //       success: function (res) {
+    //         self.setData({
+    //           user_name: res.userInfo["nickName"],
+    //           img_url: res.userInfo["avatarUrl"],
+    //           show: 1
+    //         })
+    //       }
+    //     })
+    //   },
+    //   fail() {
+        
+    //   }
+    // })
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            url: 'http://192.168.1.7:8080/login/user_login',
+            data: {
+              code: res.code,
+            },
+            method: 'GET',
+            header: {
+              'content-type': 'application/json',
+            },
+            success: function (res) {
+              //console.log("login res:", res);///
+              wx.getUserInfo({
+                success: function (res_) {
+                  console.log(res.data["token"])
+                  self.setData({
+                    user_name: res_.userInfo["nickName"],
+                    img_url: res_.userInfo["avatarUrl"],
+                    show: 1,
                   })
-                },
-                fail: function (error) {
-                  console.log(error);
+                  wx.setStorage({
+                    key: 'token',
+                    data: res.data["token"],
+                  })
+                  wx.setStorage({
+                    key: 'idx',
+                    data: res.data["idx"],
+                  })
                 }
               })
-            } else {
-              console.log("error code:" + res.errMsg);
+            },
+            fail: function (error) {
+              console.log(error);
             }
-          }
-        })
+          })
+        } else {
+          console.log("error code:" + res.errMsg);
+        }
       }
+      //失败，失败后怎么办
     })
   }
 })
