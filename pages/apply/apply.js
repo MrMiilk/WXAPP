@@ -9,7 +9,15 @@ Page({
     phone: '',//手机号
     code: '',//验证码
     iscode: null,//用于存放验证码接口里获取到的code
-    codename: '获取验证码'
+    codename: '获取验证码',
+    txt: ''
+  },
+  onLoad: function (options) {
+    //这里可以获取，设置一个变量存储
+    var txt=options.kind;
+      this.setData({
+        txt:txt,
+      })
   },
   getNameValue: function (e) {
     this.setData({
@@ -46,7 +54,7 @@ Page({
       return false;
     } else {
       wx.request({
-        url: "http://192.168.31.50:8080/apply/check_code",///
+        url: "http://192.168.1.7:8080/apply/check_code",///
         header: {
           "Content-Type": "application/json"
         },
@@ -136,7 +144,7 @@ Page({
       wx.setStorageSync('phone', this.data.phone);
       //将电话号码返回，表示成功验证
       wx.request({
-        url: "http://192.168.31.50:8080/apply/verified_code",///
+        url: "http://192.168.1.7:8080/apply/verified_code",///
         header: {
           "Content-Type": "application/json"
         },
@@ -157,59 +165,5 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-      //这里可以获取，设置一个变量存储
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

@@ -30,7 +30,7 @@
         <text class='_type'>{{store.buztype}}</text>
         
       </view>
-      <view class='applynow'>
+      <view class='applynow' >
         <button class="apply_button" type="default" size="mini" bindtap='apply_now' style='background-color:#fa5594;width:210rpx;height:70rpx;color:#FFFFFF'>
         立即申请
         </button>

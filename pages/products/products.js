@@ -11,8 +11,8 @@ Page({
     content: '1',
     storelist: [],
     default_page_: 0,
+    kind:'',
   },
-
   /**
    * 生命周期函数--监听页面加载
    * 获取当前页面加载内容
@@ -44,7 +44,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.31.50:8080/index/getCateProductData",
+      url: "http://192.168.1.7:8080/index/getCateProductData",
       data: {
         cate_id: this.data.default_page_,
         page: 0,
@@ -92,12 +92,15 @@ Page({
   apply_now: function (event) {
     //需要添加判断用户是否登陆参数，通过storage
     //没有登陆的跳转到登陆界面
-    wx.checkSession({
-      success() {
-        wx.navigateTo({
-          url: '/pages/apply/apply',//需要添加具体类别的参数
-        })
-      },
+    var kind = event.currentTarget.id;
+    console.log(kind);
+    if (kind!= '')
+      wx.checkSession({
+        success() {
+          wx.navigateTo({
+            url: '/pages/apply/apply?kind=' + kind,//需要添加具体类别的参数
+          })
+        },
       fail() {
         wx.redirectTo({
           url: '/pages/login/login',//需要登陆

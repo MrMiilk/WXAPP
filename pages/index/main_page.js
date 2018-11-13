@@ -23,16 +23,20 @@ Page({
     ],
     storelist_: [
 
-    ]
+    ],
+    kind:'',
   },
   apply_now: function (event) {
     //需要添加判断用户是否登陆参数，通过storage
     //没有登陆的跳转到登陆界面
     //收集到点击申请的产品 在下面的链接传过去 product_type = 
+    var kind = event.currentTarget.id;
+    console.log(kind);
+    if(kind!='')
     wx.checkSession({
       success (){
         wx.navigateTo({
-          url: '/pages/apply/apply',//需要添加具体类别的参数
+          url: '/pages/apply/apply?kind='+kind,//需要添加具体类别的参数
         })
       },
       fail(){
@@ -61,13 +65,13 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log('onLoad-options.id:' + options.share_id);
+    // console.log('onLoad-options.id:' + options.share_id);
     page = 0;
     template.tabbar("tabBar", 0, this)//0表示第一个tabbar
     // 广告设置
     self = this;
     wx.request({
-      url: 'http://192.168.31.50:8080/index/getCarouselData',
+      url: 'http://192.168.1.7:8080/index/getCarouselData',
       data: {
       },
       method: 'GET',
@@ -99,7 +103,7 @@ Page({
     })
     //公告设置
     wx.request({
-      url: 'http://192.168.31.50:8080/index/getSystemMsgData',
+      url: 'http://192.168.1.7:8080/index/getSystemMsgData',
       data: {
       },
       method: 'GET',
@@ -130,7 +134,7 @@ Page({
     })
     //目录
     wx.request({
-      url: 'http://192.168.31.50:8080/index/getCateData',
+      url: 'http://192.168.1.7:8080/index/getCateData',
       data: {
       },
       method: 'GET',
@@ -176,7 +180,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.31.50:8080/index/getProductData",
+      url: "http://192.168.1.7:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,
@@ -295,7 +299,7 @@ Page({
       hidden: false
     });
     wx.request({
-      url: "http://192.168.31.50:8080/index/getProductData",
+      url: "http://192.168.1.7:8080/index/getProductData",
       data: {
         page: page,
         page_size: 4,

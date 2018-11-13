@@ -3,7 +3,7 @@ App({
   globalData : {
     default_page: 0,
     default_page_1: 1,
-    default_page_2: 2
+    default_page_2: 2,
   },
   onLaunch: function () {
     //调用API从本地缓存中获取数据

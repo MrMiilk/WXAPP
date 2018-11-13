@@ -61,7 +61,7 @@ Page({
             //console.log(res.code)
             if (res.code) {
               wx.request({
-                url: 'http://192.168.31.50:8080/login/user_login',
+                url: 'http://192.168.1.7:8080/login/user_login',
                 data: {
                   code: res.code
                 },
