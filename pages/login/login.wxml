@@ -13,18 +13,24 @@
                   <button open-type="getUserInfo" bindtap='loginClick'>授权登录</button>
                </view>
              </view>
-                 <view bindtap="bindFocus">
-               <view class="messageView">
-                     <image class="nameImage" src="/images/i10.png" mode="aspectFill"></image>
-                         <text class="name">个人资料</text>
-                </view>
-                <view class="line"></view>
-             </view> 
-             <view class="messageView" bindtap='bindFocus1'>
-                <image class="nameImage" src="/images/i08.png"></image>
-                    <text class="name">设置</text>
-              </view>
-              <view class="line"></view>
+                 <navigator url="../per_imformation/per_imformation" class="messageView">
+        <view class="weui_cell" >
+            <view class="weui_cell_hd"><image src="/images/i10.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> 个人资料 </view>
+            </view>
+            <image class="with_arrow" src="/images/jian_r.png"></image>
+        </view>
+        </navigator>
+              <navigator url="../setting/setting" class="messageView">
+        <view class="weui_cell" >
+            <view class="weui_cell_hd"><image src="/images/i08.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> 设置 </view>
+            </view>
+            <image class="with_arrow" src="/images/jian_r.png"></image>
+        </view>
+        </navigator>
           </view>
   <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 </view>

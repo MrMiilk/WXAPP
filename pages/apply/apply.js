@@ -143,13 +143,16 @@ Page({
     } else {
       wx.setStorageSync('name', this.data.name);
       wx.setStorageSync('phone', this.data.phone);
-      //将电话号码返回，表示成功验证
+      // 将电话号码返回，表示成功验证
       wx.showModal({
         title: '提示',
         content: '模态弹窗',
         success: function (res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.navigateBack({
+              url: '../index/main_page',
+            })
           } else {
             console.log('用户点击取消')
           }
@@ -169,11 +172,11 @@ Page({
         },
         success(res) {
           console.log(res)//后端获取的数据
+          console.log(res.data["state"])
+
         }
       })
-      wx.redirectTo({
-        url: '../index/main_page',
-      })
+    
     }
   },
   
