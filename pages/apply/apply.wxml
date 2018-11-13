@@ -11,5 +11,5 @@
      <input placeholder='请输验证码' bindinput='getCodeValue' value='{{code}}' style='width:70%;'/> 
      <button class='codeBtn' bindtap='getVerificationCode' disabled='{{disabled}}' >{{codename}}</button>
   </view>
-  <button class='changeBtn' bindtap='save'>保存</button>
+  <button class='changeBtn' bindtap='save' catchtap='sure_locate'>保存</button>
 </view>

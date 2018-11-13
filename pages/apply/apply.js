@@ -160,6 +160,17 @@ Page({
           })
         }
       })
+      wx.showModal({
+        title: '提示',
+        content: '模态弹窗',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+            console.log('用户点击取消')
+          }
+        }
+      })
       wx.redirectTo({
         url: '../index/main_page',
       })
