@@ -144,9 +144,13 @@ Page({
       success: function (res) {
         if (res.statusCode == 200) {
           app.globalData.default_page = res.data[0].id;//默认为第一页
+          app.globalData.cate_name = res.data[1].cate_name; 
           app.globalData.default_page_1 = res.data[1].id;
+          app.globalData.cate_name1 = res.data[1].cate_name; 
           app.globalData.default_page_2 = res.data[2].id;
           console.log(res);//获取的数据
+          console.log("00000");
+          console.log(res.data);
           //数据填写
           for (var idx in res.data) {
             self.data.functions.push({
