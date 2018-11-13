@@ -19,7 +19,7 @@ Page({
             that.setData({
               user_name: res.userInfo["nickName"],
               img_url: res.userInfo["avatarUrl"],
-              show: 0
+              show: 1
             })
           }
         })
@@ -62,14 +62,14 @@ Page({
           wx.request({
             url: 'http://192.168.1.7:8080/login/user_login',
             data: {
-              code: res.code
+              code: res.code,
             },
             method: 'GET',
             header: {
               'content-type': 'application/json',
             },
             success: function (res) {
-              console.log("login res:", res);///
+              //console.log("login res:", res);///
               wx.getUserInfo({
                 success: function (res_) {
                   console.log(res.data["token"])
@@ -81,6 +81,10 @@ Page({
                   wx.setStorage({
                     key: 'token',
                     data: res.data["token"],
+                  })
+                  wx.setStorage({
+                    key: 'idx',
+                    data: res.data["idx"],
                   })
                 }
               })
