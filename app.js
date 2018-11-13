@@ -4,9 +4,9 @@ App({
     default_page: 0,
     default_page_1: 1,
     default_page_2: 2,
-    cate_name1:'热门推荐',
-    cate_name2:'放水口子',
-    cate_name3:'审核快速',
+    cate_name0:'热门推荐',
+    cate_name1:'放水口子',
+    cate_name2:'审核快速',
   },
   onLaunch: function () {
     //调用API从本地缓存中获取数据
