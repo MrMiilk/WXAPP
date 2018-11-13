@@ -144,17 +144,17 @@ Page({
       wx.setStorageSync('name', this.data.name);
       wx.setStorageSync('phone', this.data.phone);
       //将电话号码返回，表示成功验证
-      wx.showModal({
-        title: '提示',
-        content: '模态弹窗',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else {
-            console.log('用户点击取消')
-          }
-        }
-      })
+      // wx.showModal({
+      //   title: '提示',
+      //   content: '模态弹窗',
+      //   success: function (res) {
+      //     if (res.confirm) {
+      //       console.log('用户点击确定')
+      //     } else {
+      //       console.log('用户点击取消')
+      //     }
+      //   }
+      // })
       wx.request({
         url: "http://192.168.1.7:8080/apply/verified_code",///
         header: {
@@ -168,11 +168,11 @@ Page({
           name: this.data.name,
         },
         success(res) {
-          //console.log(res)//后端获取的数据
-          
+          console.log(res)//后端获取的数据
+          console.log(res.data["state"])
         }
       })
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../index/main_page',
       })
     }

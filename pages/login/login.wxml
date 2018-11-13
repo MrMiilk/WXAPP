@@ -1,6 +1,5 @@
 <import src="../../compoments/tBar/tBar.wxml"/>
 
-<view class="container">
   <view class="login-from">
     <!--账号-->
        <view class = "Login">
@@ -20,12 +19,21 @@
                 </view>
                 <view class="line"></view>
              </view> 
+
              <view class="messageView" bindtap='bindFocus1'>
                 <image class="nameImage" src="/images/i08.png"></image>
                     <text class="name">设置</text>
               </view>
               <view class="line"></view>
           </view>
+          <navigator url="../setting/setting" class="messageView0">
+        <view class="weui_cell" >
+            <view class="weui_cell_hd"><image src="/images/i08.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> 设置 </view>
+            </view>
+            <image class="with_arrow" src="/images/jian_r.png"></image>
+        </view>
+        </navigator>
   <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
-</view>
 </view>
