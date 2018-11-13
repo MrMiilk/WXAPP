@@ -44,7 +44,7 @@ Page({
       }
     });
     wx.request({
-      url: "http://192.168.31.50:8080/index/getCateProductData",
+      url: "http://192.168.1.7:8080/index/getCateProductData",
       data: {
         cate_id: this.data.default_page_,
         page: 0,

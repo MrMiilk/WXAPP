@@ -54,7 +54,7 @@ Page({
       return false;
     } else {
       wx.request({
-        url: "http://192.168.31.50:8080/apply/check_code",///
+        url: "http://192.168.1.7:8080/apply/check_code",///
         header: {
           "Content-Type": "application/json"
         },
@@ -144,7 +144,7 @@ Page({
       wx.setStorageSync('phone', this.data.phone);
       //将电话号码返回，表示成功验证
       wx.request({
-        url: "http://192.168.31.50:8080/apply/verified_code",///
+        url: "http://192.168.1.7:8080/apply/verified_code",///
         header: {
           "Content-Type": "application/json"
         },
