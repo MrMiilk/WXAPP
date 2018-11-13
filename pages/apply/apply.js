@@ -169,7 +169,10 @@ Page({
         },
         success(res) {
           console.log(res)//后端获取的数据
+<<<<<<< HEAD
           console.log(res.data["state"])
+=======
+>>>>>>> 694d4227d79751606858ea2423c2bdf5e43099ff
         }
       })
       wx.navigateBack({
