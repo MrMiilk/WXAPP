@@ -12,6 +12,9 @@ Page({
     storelist: [],
     default_page_: 0,
     kind:'',
+    cate_name0:'',
+    cate_name1:'',
+    cate_name2:'',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -32,9 +35,13 @@ Page({
       tmp = options.id
     }
     that.setData({
-      default_page_ : tmp
+      default_page_ : tmp,
+      cate_name0: app.globalData.cate_name0,
+      cate_name1: app.globalData.cate_name1,
+      cate_name2: app.globalData.cate_name2,
     })
     console.log(that.data.default_page_)//测试，如果能得到
+    console.log(that.data.cate_name1)
     //贷款详情
     wx.getSystemInfo({
       success: function (res) {
